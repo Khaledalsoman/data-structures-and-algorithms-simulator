@@ -1,8 +1,7 @@
 class queue:
     def __init__(self,queue):
         self.queue=queue
-        self.head=0
-        self.tail=0
+
 
     def enqueue(self,item):
          self.queue.append(item)
