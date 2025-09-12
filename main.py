@@ -3,6 +3,7 @@ from algorithms.search import search
 from algorithms.Sort import Sort
 from data_structures.queue import queue
 from data_structures.stack import stack
+from data_structures.LinkedList import *
 def Main():
     list=[]
     list_size=int(input("enter the list size: "))
@@ -19,7 +20,10 @@ def Main():
         "2.queue \n"
         "3.stack \n"))
         if choose_DS==1:
-            pass
+            LL=LinkedList()
+            for i in list:
+                LL.insert(Node(i))
+            LL.display()
         
         elif choose_DS==2:
             qu=queue(list)
@@ -65,16 +69,21 @@ def Main():
             "4.Merge Sort \n" \
             "5.Quick Sort \n"))
             if choose_sort==1:
-                pass
+                sel=Sort(list)
+                sel.selection_sort()
             elif choose_sort==2:
-                pass
+                ins=Sort(list)
+                ins.insertion_sort()
             elif choose_sort==3:
                 bubble=Sort(list)
                 bubble.bubble_sort()
             elif choose_sort==4:
-                pass
+                merge=Sort(list)
+                merge.merge_sort()
             elif choose_sort==5:
-                pass
+                print(list)
+                quick=Sort(list)
+                quick.quick_sort(0,len(list)-1)
         if choose_algo==2:
             choose_sort=int(input("choose searching method:\n " \
             "1.Linear Search \n" \
