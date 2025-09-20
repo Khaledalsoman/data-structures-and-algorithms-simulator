@@ -6,11 +6,6 @@ from data_structures.stack import stack
 from data_structures.LinkedList import *
 from data_structures.trees import *
 def Main():
-    list=[]
-    list_size=int(input("enter the list size: "))
-    for i in range(list_size):
-        element=int(input(f'enter element number {i+1}: '))
-        list.append(element)
     choose=int(input('Select the method you want to use \n' \
     ' 1.Data structure \n'
     ' 2.Algorithm \n '
@@ -22,52 +17,11 @@ def Main():
         "3.stack \n"
         "4.trees \n"))
         if choose_DS==1:
-            LL=LinkedList()
-            chooseLL=int(input('choose Linked List method you want to use: \n'
-            '1.insert \n'
-            '2.delete \n '))
-            for i in list:
-                LL.insert(Node(i))
-            if chooseLL==1:
-                LL.insert(int(input('insert number: ')))
-                LL.display()
-            elif chooseLL==2:
-                LL.delete(int(input('enter number to delete from the linked list:')))
-                LL.display()
+            LinkedList.display()
         elif choose_DS==2:
-            qu=queue(list)
-            print(list)
-            choose_queue = int(input("choose queue method to use: \n" \
-            "1.enqueue \n" \
-            "2.dequeue \n" \
-            "3.peek \n" \
-            "4.size \n"))
-            if choose_queue ==1:
-                qu.enqueue(int(input('choose number to enqueue ')))
-            elif choose_queue ==2:
-                qu.dequeue()
-            elif choose_queue ==3:
-                qu.peek()
-            elif choose_queue ==4:
-                qu.size()
+            queue.display()
         elif choose_DS==3:
-            st=stack(list)
-            choose_stack=int(input("choose stack method to use \n"
-            "1.push \n"
-            "2.pop \n"
-            "3.peek \n"
-            "4.size\n"))
-            if choose_stack==1:
-                st.push(int(input("enter number to push :")))
-            elif choose_stack==2:
-                st.pop()
-            elif choose_stack==3:
-                st.peek()
-            elif choose_stack==4:
-                st.size()
-        elif choose_DS==4:
-            trees.display()
-
+            stack.display()
     if choose==2:
         choose_algo=int(input("choose algorithm:\n " \
         "1.Sort \n" \

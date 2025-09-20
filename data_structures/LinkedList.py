@@ -42,12 +42,40 @@ class LinkedList:
             curr=curr.next
 
 
-    def display(self):
-        curr = self.head
-        while curr:
-            print(curr.data, end=" <-> ")
-            curr = curr.next
-        print("None")
+    def display():
+        LL=LinkedList()
+        while True:
+            choose_LL=int(input("choose Linked List method:\n" \
+            "1.insert\n" 
+            "2.delete \n"
+            "3.exit\n"))
+            if choose_LL==1:
+                LL.insert(Node(int(input("enter value to insert: "))))
+            elif choose_LL==2:
+                LL.delete(int(input("enter a value to  delete: ")))
+            else:
+                break
+            curr=LL.head
+            while curr:
+                print(curr.data,end='<->')
+                curr=curr.next
+            print("None")
+            
+
+                
+
+ 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
