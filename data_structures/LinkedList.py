@@ -25,6 +25,23 @@ class LinkedList:
         newNode.next=curr.next
         curr.next=newNode
         newNode.prev=curr
+    def delete(self,deleteNode):
+        curr=self.head
+        if self.head and self.head.data==deleteNode:
+            self.head=curr.next
+            if self.head:
+                self.head.prev = None
+            return
+
+        while curr:
+            if curr.data==deleteNode:
+                curr.prev.next=curr.next
+                if curr.next:              
+                    curr.next.prev = curr.prev
+                return  
+            curr=curr.next
+
+
     def display(self):
         curr = self.head
         while curr:

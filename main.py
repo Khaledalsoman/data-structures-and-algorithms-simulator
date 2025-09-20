@@ -4,6 +4,7 @@ from algorithms.Sort import Sort
 from data_structures.queue import queue
 from data_structures.stack import stack
 from data_structures.LinkedList import *
+from data_structures.trees import *
 def Main():
     list=[]
     list_size=int(input("enter the list size: "))
@@ -18,13 +19,21 @@ def Main():
         choose_DS=int(input("choose Data structure:\n "
         "1.Linked List \n"
         "2.queue \n"
-        "3.stack \n"))
+        "3.stack \n"
+        "4.trees \n"))
         if choose_DS==1:
             LL=LinkedList()
+            chooseLL=int(input('choose Linked List method you want to use: \n'
+            '1.insert \n'
+            '2.delete \n '))
             for i in list:
                 LL.insert(Node(i))
-            LL.display()
-        
+            if chooseLL==1:
+                LL.insert(int(input('insert number: ')))
+                LL.display()
+            elif chooseLL==2:
+                LL.delete(int(input('enter number to delete from the linked list:')))
+                LL.display()
         elif choose_DS==2:
             qu=queue(list)
             print(list)
@@ -56,6 +65,8 @@ def Main():
                 st.peek()
             elif choose_stack==4:
                 st.size()
+        elif choose_DS==4:
+            trees.display()
 
     if choose==2:
         choose_algo=int(input("choose algorithm:\n " \
