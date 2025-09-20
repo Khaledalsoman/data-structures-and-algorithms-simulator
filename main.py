@@ -22,6 +22,8 @@ def Main():
             queue.display()
         elif choose_DS==3:
             stack.display()
+        elif choose_DS==4:
+            trees.display()
     if choose==2:
         choose_algo=int(input("choose algorithm:\n " \
         "1.Sort \n" \
